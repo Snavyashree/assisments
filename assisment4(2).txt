@@ -1,0 +1,41 @@
+using System;
+
+interface IShape {
+    double Area();
+    double Perimeter();
+}
+
+class Rectangle : IShape {
+    private double length;
+    private double width;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    public double Area() {
+        return length * width;
+    }
+
+    public double Perimeter() {
+        return 2 * (length + width);
+    }
+}
+
+class Square : Rectangle {
+    public Square(double side) : base(side, side) {
+    }
+}
+
+class Program {
+    static void Main(string[] args) {
+        Rectangle rectangle = new Rectangle(7, 4);
+        Console.WriteLine("Rectangle:");
+        Console.WriteLine($"Area: {rectangle.Area()} Perimeter: {rectangle.Perimeter()}");
+
+        Square square = new Square(4);
+        Console.WriteLine("Square:");
+        Console.WriteLine($"Area: {square.Area()} Perimeter: {square.Perimeter()}");
+    }
+}
