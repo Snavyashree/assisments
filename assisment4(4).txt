@@ -1,0 +1,16 @@
+using System;
+
+class Program {
+    static void Main(string[] args) {
+        int rows = 5;
+
+        // Outer loop for rows
+        for (int i = 1; i <= rows; i++) {
+            // Inner loop for columns
+            for (int j = 1; j <= i; j++) {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
