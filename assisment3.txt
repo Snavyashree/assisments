@@ -1,0 +1,23 @@
+using System;
+
+namespace conditional
+{
+    class Ifstatement
+    {
+        public static void Main(string[] args)
+        {
+            int age = 30;
+            if(age<45)
+            {
+                if(age<=26)
+                {
+                    Console.WriteLine("He is not eligible for getting job");
+                }
+                else
+                {
+                    Console.WriteLine("He is eligible for getting job");
+                } 
+            }
+        }
+    }
+}

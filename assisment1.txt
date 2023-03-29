@@ -1,0 +1,13 @@
+using System;
+
+namespace name
+{
+    class name
+    {
+        public static void Main(string[] args)
+        {
+            string name = "Navyashree";
+            Console.WriteLine($"HelloWorld,this is {name}.");
+        }
+    }
+}

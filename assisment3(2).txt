@@ -1,0 +1,21 @@
+using System;
+
+namespace conditional
+{
+    class program
+    {
+        public static void Main(string[]args)
+        {
+            int value = 20;
+            if (value < 10)
+            {
+                Console.WriteLine("Value is less than 10");
+            }
+            else
+            {
+                Console.WriteLine("Value is greater than 10");
+            }
+            Console.ReadKey();
+        }
+    }
+}
