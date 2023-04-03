@@ -1,0 +1,138 @@
+#problem 1 
+create a Shape class
+
+using System;
+
+public abstract class Shape {
+    public abstract double GetArea();
+}
+
+public class Circle : Shape {
+    private double _radius;
+
+    public Circle(double radius) {
+        _radius = radius;
+    }
+
+    public override double GetArea() {
+        return Math.PI * _radius * _radius;
+    }
+}
+
+public class Rectangle : Shape {
+    private double _width;
+    private double _height;
+
+    public Rectangle(double width, double height) {
+        _width = width;
+        _height = height;
+    }
+
+    public override double GetArea() {
+        return _width * _height;
+    }
+}
+
+public class Program {
+    public static void Main() {
+        Circle circle = new Circle(5.0);
+        Console.WriteLine("Area of circle: {0}", circle.GetArea());
+
+        Rectangle rectangle = new Rectangle(10.0, 5.0);
+        Console.WriteLine("Area of rectangle: {0}", rectangle.GetArea());
+    }
+}
+
+#problem 2
+Create Circle,Rectangle,Square,Triangle classes inherting from Shape class
+
+using System;
+
+public abstract class Shape {
+    public abstract double Area();
+}
+
+public class Circle : Shape {
+    private readonly double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public override double Area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+public class Triangle : Shape {
+    private readonly double side1;
+    private readonly double side2;
+    private readonly double side3;
+
+    public Triangle(double side1, double side2, double side3) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+    }
+
+    public override double Area() {
+        double p = (side1 + side2 + side3) / 2;
+        return Math.Sqrt(p * (p - side1) * (p - side2) * (p - side3));
+    }
+}
+
+public class Rectangle : Shape {
+    private readonly double width;
+    private readonly double height;
+
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    public override double Area() {
+        return width * height;
+    }
+}
+
+public class Square : Shape {
+    private readonly double side;
+
+    public Square(double side) {
+        this.side = side;
+    }
+
+    public override double Area() {
+        return side * side;
+    }
+}
+
+class Program {
+    static void Main(string[] args) {
+        var circle = new Circle(5);
+        Console.WriteLine($"Area of circle: {circle.Area()}");
+
+        var triangle = new Triangle(3, 4, 5);
+        Console.WriteLine($"Area of triangle: {triangle.Area()}");
+
+        var rectangle = new Rectangle(4, 5);
+        Console.WriteLine($"Area of rectangle: {rectangle.Area()}");
+
+        var square = new Square(6);
+        Console.WriteLine($"Area of square: {square.Area()}");
+    }
+}
+
+
+#problem 3
+print the area of any shape: eg Radius=>3.14*(Radius*Radius) 
+
+using System;
+
+public class Program {
+    public static void Main() {
+        double radius = 5.0;
+        double area = Math.PI * radius * radius;
+        Console.WriteLine("The area of the circle is: {0}", area);
+    }
+}
