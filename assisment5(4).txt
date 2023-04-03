@@ -1,0 +1,98 @@
+#Problem 4
+Write a AppMath class, which should implements Add, Substract, Multiplication, Division of integer as well as double/decimal values.
+Also, input should not be retricted to 2 params
+eg int Add(int a, int b); double Add(double a, double b); decimal Add(decimal a, decimal b);
+input => Add(2,2,5,6,7) Output => 22
+input => Multiplication(2,2,5) Output => (225)=> 20
+
+using System;
+
+public class AppMath {
+    public static int Add(params int[] numbers) {
+        int sum = 0;
+        foreach (int num in numbers) {
+            sum += num;
+        }
+        return sum;
+    }
+    
+    public static double Add(params double[] numbers) {
+        double sum = 0.0;
+        foreach (double num in numbers) {
+            sum += num;
+        }
+        return sum;
+    }
+    
+    public static decimal Add(params decimal[] numbers) {
+        decimal sum = 0m;
+        foreach (decimal num in numbers) {
+            sum += num;
+        }
+        return sum;
+    }
+    
+    public static int Substract(int a, int b) {
+        return a - b;
+    }
+    
+    public static double Substract(double a, double b) {
+        return a - b;
+    }
+    
+    public static decimal Substract(decimal a, decimal b) {
+        return a - b;
+    }
+    
+    public static int Multiplication(params int[] numbers) {
+        int product = 1;
+        foreach (int num in numbers) {
+            product *= num;
+        }
+        return product;
+    }
+    
+    public static double Multiplication(params double[] numbers) {
+        double product = 1.0;
+        foreach (double num in numbers) {
+            product *= num;
+        }
+        return product;
+    }
+    
+    public static decimal Multiplication(params decimal[] numbers) {
+        decimal product = 1m;
+        foreach (decimal num in numbers) {
+            product *= num;
+        }
+        return product;
+    }
+    
+    public static int Division(int a, int b) {
+        if (b == 0) {
+            throw new DivideByZeroException("Cannot divide by zero");
+        }
+        return a / b;
+    }
+    
+    public static double Division(double a, double b) {
+        if (b == 0.0) {
+            throw new DivideByZeroException("Cannot divide by zero");
+        }
+        return a / b;
+    }
+    
+    public static decimal Division(decimal a, decimal b) {
+        if (b == 0m) {
+            throw new DivideByZeroException("Cannot divide by zero");
+        }
+        return a / b;
+    }
+}
+
+public class Program {
+    public static void Main() {
+        Console.WriteLine(AppMath.Add(2, 2, 5, 6, 7)); // Output: 22
+        Console.WriteLine(AppMath.Multiplication(2, 2, 5)); // Output: 20
+    }
+}
