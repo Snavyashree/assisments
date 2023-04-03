@@ -1,0 +1,22 @@
+using System;
+
+namespace reverseString
+{
+    class Program
+    {
+        public static void Main()
+        {
+            Console.WriteLine(reverse("ABC")) ;
+            Console.ReadLine();
+            }
+            public static string reverse(string s)
+            {
+                string reverseStr = "" ;
+                for (int a = s.Length - 1; a >= 0; a--)
+                {
+                    reverseStr = reverseStr + s[a] ;
+                    }
+                    return reverseStr ;
+            }
+    }
+}
