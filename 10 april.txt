@@ -1,0 +1,34 @@
+using System;
+using System.IO;
+class Program
+{
+	static void Main()
+	{
+		// File creation and writing
+		string fileName = "example.txt";
+		string content = "Hello, World!";
+
+		// Create and write to the file
+		File.WriteAllText(fileName, content);
+
+		// File opening and reading
+		string fileContent = File.ReadAllText(fileName);
+		Console.WriteLine("File content: " + fileContent);
+
+		// Appending a line to a text file
+		string newLine = "This is a new line.";
+		AppendLineToFile(fileName, newLine);
+
+		// File reopening and reading after appending
+		fileContent = File.ReadAllText(fileName);
+		Console.WriteLine("Updated file content: " + fileContent);
+	}
+	static void AppendLineToFile(string fileName, string line)
+	{
+		// Open the file in append mode and write the new line
+		using (StreamWriter file = File.AppendText(fileName))
+	{
+		file.WriteLine(line);
+	}
+	}
+}
