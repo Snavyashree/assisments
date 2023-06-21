@@ -1,0 +1,43 @@
+using System;
+// Problem 1: Singlecast Delegate
+delegate void SinglecastDelegate(string message);
+
+// Problem 2: Multicast Delegate
+delegate void MulticastDelegate(string message);
+
+// Problem 3: Anonymous Delegate
+class Program
+{
+	static void Main()
+	{
+		// Problem 1: Singlecast Delegate
+		SinglecastDelegate singlecastDelegate = DisplayMessage;
+		singlecastDelegate("Hello, Singlecast Delegate!");
+		Console.WriteLine();
+
+		// Problem 2: Multicast Delegate
+		MulticastDelegate multicastDelegate = null;
+		multicastDelegate += DisplayMessage;
+		multicastDelegate += DisplayAnotherMessage;
+		multicastDelegate("Hello, Multicast Delegate!");
+		Console.WriteLine();
+
+		// Problem 3: Anonymous Delegate
+		Action<string> anonymousDelegate = delegate (string message)
+		{
+			Console.WriteLine("Hello, Anonymous Delegate!");
+			Console.WriteLine("Message: " + message);
+		};
+		anonymousDelegate("Hello");
+	}
+	static void DisplayMessage(string message)
+	{
+		Console.WriteLine("Hello, Singlecast Delegate!");
+		Console.WriteLine("Message: " + message);
+	}
+	static void DisplayAnotherMessage(string message)
+	{
+		Console.WriteLine("Hello, Another Message!");
+		Console.WriteLine("Message: " + message);
+	}
+}
