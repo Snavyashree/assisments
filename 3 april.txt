@@ -1,0 +1,97 @@
+#problem 1
+using System;
+class Program
+{
+	static void Main(string[] args)
+	{
+		Console.Write("Enter a string: ");
+		string input = Console.ReadLine();
+		Console.WriteLine("The string you entered is: " + input);
+	}
+}   
+
+
+#problem 2
+using System;
+class Program
+{
+	static void Main(string[] args)
+	{
+		Console.Write("Input the string: ");
+		string input = Console.ReadLine();
+		int length = 0;
+		foreach (char c in input)
+		{
+			length++;
+		}
+		Console.WriteLine("Length of the string is: " + length);
+	}
+}
+
+
+#problem 3
+using System;
+class Program
+{
+	static void Main(string[] args)
+	{
+		Console.Write("Input the string: ");
+		string input = Console.ReadLine();
+		Console.Write("The characters of the string are: ");
+		foreach (char c in input)
+		{
+			Console.Write(c + " ");
+		}
+		Console.WriteLine();
+	}
+}
+
+
+#problem 4
+using System;
+class Program
+{
+	static void Main(string[] args)
+	{
+		Console.Write("Input the string: ");
+		string input = Console.ReadLine();
+		Console.Write("The characters of the string in reverse are: ");
+		for (int i = input.Length - 1; i >= 0; i--)
+		{
+			Console.Write(input[i] + " ");
+		}
+		Console.WriteLine();
+	}
+}
+
+#problem 5
+using System;
+class Program
+{
+	static void Main(string[] args)
+	{
+		Console.Write("Input the string: ");
+		string input = Console.ReadLine();
+		int alphabetCount = 0;
+		int digitCount = 0;
+		int specialCharCount = 0;
+		foreach (char c in input)
+		{
+			if (Char.IsLetter(c))
+			{
+				alphabetCount++;
+			}
+			else if (Char.IsDigit(c))
+			{
+				digitCount++;
+			}
+			else
+			{
+				specialCharCount++;
+			}
+		}
+		Console.WriteLine("Number of Alphabets in the string is: " + alphabetCount);
+		Console.WriteLine("Number of Digits in the string is: " + digitCount);
+		Console.WriteLine("Number of Special characters in the string is: " + specialCharCount);
+	}
+}
